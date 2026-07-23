@@ -1,6 +1,6 @@
 import { useMarket } from "../../context/MarketContext";
 
-const watchlist = [
+const symbols = [
   {
     name: "Gold",
     symbol: "OANDA:XAUUSD",
@@ -14,41 +14,29 @@ const watchlist = [
     symbol: "FX:EURUSD",
   },
   {
-    name: "GBP/USD",
-    symbol: "FX:GBPUSD",
-  },
-  {
     name: "NASDAQ",
     symbol: "NASDAQ:NDX",
   },
 ];
 
 export default function WatchlistPanel() {
-
   const { setSelectedSymbol } = useMarket();
 
   return (
     <div className="panel">
-
       <h2>⭐ Watchlist</h2>
 
       <ul className="watchlist">
-
-        {watchlist.map((item) => (
-
+        {symbols.map((item) => (
           <li
             key={item.symbol}
-            onClick={() => setSelectedSymbol(item.symbol)}
             className="watch-item"
+            onClick={() => setSelectedSymbol(item.symbol)}
           >
             {item.name}
-
           </li>
-
         ))}
-
       </ul>
-
     </div>
   );
 }

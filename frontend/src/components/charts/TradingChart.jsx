@@ -1,17 +1,22 @@
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
-import { useMarket } from "../../context/MarketContext";
+import { useState } from "react";
+
+import ChartToolbar from "./ChartToolbar";
 
 export default function TradingChart() {
-
-  const { selectedSymbol } = useMarket();
+  const [symbol, setSymbol] = useState("OANDA:XAUUSD");
 
   return (
-    <AdvancedRealTimeChart
-      theme="dark"
-      symbol={selectedSymbol}
-      autosize
-      width="100%"
-      height={500}
-    />
+    <>
+      <ChartToolbar onSymbolChange={setSymbol} />
+
+      <AdvancedRealTimeChart
+        theme="dark"
+        symbol={symbol}
+        width="100%"
+        height={600}
+        autosize
+      />
+    </>
   );
 }

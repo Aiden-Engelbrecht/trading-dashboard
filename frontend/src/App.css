@@ -283,3 +283,40 @@ border-radius:8px;
 background:#2563eb;
 
 }
+.chart-toolbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.chart-toolbar input{
+flex:1;
+min-width:220px;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#0f172a;
+color:white;
+}
+
+.chart-toolbar button{
+padding:10px 18px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:8px;
+cursor:pointer;
+transition:.2s;
+}
+
+.chart-toolbar button:hover{
+background:#1d4ed8;
+}
+
+.timeframes{
+display:flex;
+gap:10px;
+}
