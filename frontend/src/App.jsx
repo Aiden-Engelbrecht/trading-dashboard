@@ -1,8 +1,13 @@
-import Home from "./pages/Home";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-  return <Home />;
+  return (
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+    </Routes>
+  );
 }
 
 export default App;
