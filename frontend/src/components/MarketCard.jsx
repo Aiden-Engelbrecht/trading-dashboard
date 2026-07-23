@@ -1,11 +1,19 @@
-export default function MarketCard({ title, value }) {
-    return (
-        <div className="bg-slate-800 rounded-xl p-6 shadow-md">
-            <h2 className="text-xl">{title}</h2>
+export default function MarketCard({ title, value, change }) {
+  return (
+    <div className="card">
+      <h2>{title}</h2>
 
-            <p className="text-3xl font-bold mt-4">
-                {value}
-            </p>
-        </div>
-    );
+      <p>{value}</p>
+
+      <small
+        style={{
+          color: change >= 0 ? "#22c55e" : "#ef4444",
+          fontSize: "16px",
+        }}
+      >
+        {change >= 0 ? "+" : ""}
+        {change}%
+      </small>
+    </div>
+  );
 }
